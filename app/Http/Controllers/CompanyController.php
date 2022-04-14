@@ -15,7 +15,7 @@ class CompanyController extends Controller
     
     public function index()
     {
-        $this->datas['data'] = Company::orderby('id','desc')->paginate(1);
+        $this->datas['data'] = Company::orderby('id','desc')->paginate(10);
         return view('company.index')->with($this->datas);
     }
 

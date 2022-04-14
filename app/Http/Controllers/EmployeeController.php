@@ -19,7 +19,7 @@ class EmployeeController extends Controller
         $this->datas['data'] = Employee::select('employees.*','companies.name as company_name')
                                         ->leftjoin('companies','companies.id','employees.company_id')
                                         ->orderby('employees.id','desc')
-                                        ->paginate(1);
+                                        ->paginate(10);
         return view('employee.index')->with($this->datas);
     }
 
